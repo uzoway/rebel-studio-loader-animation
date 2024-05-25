@@ -12,17 +12,10 @@
     --block-width: 100px;
 }
 
-@font-face {
-    font-family: "Britanica-Black";
-    src: url("/assets/font/Britanica-Black\ Regular.ttf");
-    font-display: swap;
-}
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
     font-size: calc(100vw / 1920 * 20);
 }
 
@@ -32,8 +25,7 @@ body {
     height: 100svh;
     overflow: hidden;
     position: relative;
-    font-family: var(--britanica-black);
-    background-color: #e6dddd;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -42,7 +34,6 @@ a {
     font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);    
     line-height: .8;
     text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
 }
 
@@ -56,54 +47,6 @@ li {
     list-style: none;
     line-height: .8;
 }
-
-
-/* Grid layout overlay */
-
-.overlay {
-    opacity: 0;
-    position: fixed;
-    inset: 0 var(--gutter-width);
-    background-image: 
-        repeating-linear-gradient(
-            to right,
-            #e7a2a2,
-            #e7a2a2 calc((100% / var(--column)) - var(--gutter-width)),
-            transparent calc((100% / var(--column)) - var(--gutter-width)),
-            transparent calc(100% / var(--column))
-        );
-    background-position: left top;
-    background-size: calc(100% + var(--gutter-width)) 100%;
-    z-index: -1;  /* Change to a positive value to see overlay. */
-    transition: opacity 0.3s ease;
-}
-
-.overlay::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 110%;
-    height: var(--gutter-width);
-    background-color: #8b484879;
-}
-
-.overlay::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 110%;
-    height: var(--gutter-width);
-    background-color: #8b484879;
-}
-
-.overlay.active {
-    opacity: 1;
-}
-
 
 /* Page styling */
 .wrapper {
@@ -130,6 +73,25 @@ li {
     background-color: var(--black);
     opacity: 1;
     border: 1px solid var(--black);
+}
+
+.preloader__overlay .preloader__overlay--text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    line-height: 0.9;
+}
+
+.preloader__overlay--text span {
+    color: var(--white);
+    text-transform: uppercase;
+    display: inline-block;
+    transform: translateY(100%);
+    margin: 0 0.1rem;
+    font-size: 1.5rem;
+    will-change: transform;
 }
 
 /* Responsive design */
