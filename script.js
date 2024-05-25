@@ -61,8 +61,36 @@ function initializeAnimation() {
         stagger: {
             amount: 1.1,
             from: "random"
+        },
+        onComplete: () => {
+            gsap.set(".preloader__overlay", { zIndex: 0 })
         }
     })
+    .to("#js-slide-up", {
+        y: 0,
+        stagger: 0.15,
+        ease: "ease-out-cubic"
+    }, "<1.2")
+    .to(".hero__content .left__container", {
+        scale: 1,
+        transformOrigin: "left bottom",
+        duration: 0.5,
+        ease: "ease-out-quad",
+        onComplete: () => {
+            gsap.to(".container__heading .heading__line span", {
+                y: "0",
+                ease: "ease-out-cubic",
+                stagger: 0.1
+            })
+            gsap.to(".container__list .container__list--item", {
+                autoAlpha: 1,
+                y: 0,
+                stagger: 0.08,
+                ease: "ease-out-cubic",
+                delay: 0.45
+            })
+        }
+    }, "<0.7")
 }
 
 window.addEventListener("DOMContentLoaded", initializeAnimation);
