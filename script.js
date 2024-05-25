@@ -1,14 +1,14 @@
-// Uncomment to be able to toggle the grid visualizer
-// document.querySelector("body").addEventListener("click", () => {
-//     document.querySelector(".overlay").classList.toggle("active");
-// })
-
-
 gsap.registerPlugin(CustomEase);
 CustomEase.create("ease-out-cubic", "0.215,0.61,0.355,1");
+CustomEase.create("ease-out-quad", "0.25,0.46,0.45,0.94");
+CustomEase.create("ease-out-quart", "0.165,0.84,0.44,1");
+
+CustomEase.create("ease-in-cubic", "0.55,0.055,0.675,0.19");
+CustomEase.create("ease-in-quart", "0.895,0.03,0.685,0.22");
 
 
 function initializeAnimation() {
+    // Dynamically create and fill the viewport with equally sized div blocks
     const preloaderOverlay = document.querySelector(".preloader__overlay");
 
     const windowsWidth = window.innerWidth;
@@ -37,10 +37,27 @@ function initializeAnimation() {
         block.style.height = `${adjustedBlockHeight}px`;
     });
 
-    gsap.to(".preloader__overlay--block", {
+
+    // Preloader timeline animation
+    const preloaderTl = gsap.timeline({ delay: 1.5 });
+
+    preloaderTl.to(".preloader__overlay--text span", { 
+        y: "0",
+        ease: "ease-out-cubic",
+        stagger: 0.2
+    })
+    .to(".preloader__overlay--text span", { 
+        delay: 0.3,
+        y: "100%",
+        ease: "ease-in-quart",
+        stagger: {
+            from: "end",
+            each: 0.2
+        }
+    })
+    .to(".preloader__overlay--block", {
         autoAlpha: 0,
-        delay: 1.5,
-        ease: "power4.out",
+        ease: "ease-out-cubic",
         stagger: {
             amount: 1.1,
             from: "random"
