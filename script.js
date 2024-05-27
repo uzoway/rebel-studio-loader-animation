@@ -48,7 +48,7 @@ function initializeAnimation() {
     })
     .to(".preloader__overlay--text span", { 
         delay: 0.3,
-        y: "100%",
+        y: "103%",
         ease: "ease-in-quart",
         stagger: {
             from: "end",
