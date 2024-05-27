@@ -1,6 +1,6 @@
-<!-- # Jen Grisowold Personal Website
+# Rebel Studio Home Page Animation
 
-Development of a conceptual animation for the personal website of digital content creator Jen Griswold.
+Development of a conceptual animation for the website of London based CGI studio - Rebel Studio
 Design & Motion by [Alex Tkachev](https://twitter.com/simply_aalex).
 
 ## Table of contents
@@ -33,4 +33,4 @@ Feel free to review the code for a more detailed understanding of my approach, a
 
 ## Credit 
 
-Huge credits goes to [Alex Tkachev](https://twitter.com/simply_aalex)🙌 who created the original design and motion which I have coded. -->
+Huge credits goes to [Alex Tkachev](https://twitter.com/simply_aalex)🙌 who created the original design and motion which I have coded.
