@@ -1,5 +1,9 @@
 # Rebel Studio Home Page Animation
 
+
+https://github.com/uzoway/rebel-studio-loader-animation/assets/73430874/3c8c1854-f430-48cc-baa9-cdf39200c95b
+
+
 Development of a conceptual animation for the website of London based CGI studio - Rebel Studio
 Design & Motion by [Alex Tkachev](https://twitter.com/simply_aalex).
 
