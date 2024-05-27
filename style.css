@@ -31,8 +31,6 @@ body {
 a {
     text-decoration: none;
     color: var(--black);
-    font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);    
-    line-height: .8;
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -45,7 +43,6 @@ img {
 
 li {
     list-style: none;
-    line-height: .8;
 }
 
 /* Page styling */
@@ -81,7 +78,7 @@ li {
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
-    line-height: 0.9;
+    line-height: 1;
 }
 
 .preloader__overlay--text span {
@@ -131,6 +128,7 @@ li {
 .navigation__location,
 .navigation__logo {
     overflow: hidden;
+    line-height: 1;
 }
 
 .navigation  .navigation__list .navigation__list--item a,
@@ -220,8 +218,82 @@ li {
 
 
 /* Responsive design */
-/* @media (max-width: 750px) {
-    :root {
-        --column: 6;
+@media (max-width: 861px) {
+    .hero__content .left__container {
+        padding: 2vw;
+        width: 35vw;
     }
-} */
+
+    .left__container .container__heading .heading__line span {
+        font-size: 1.7rem;
+    }
+
+    .left__container .container__list .container__list--item {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 784px) {
+    .navigation span, 
+    .navigation a,
+    .hero__content .right__container .right__container--text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 619px) {
+    .hero__content .left__container {
+        width: 60vw;
+    }
+
+    .left__container .container__heading .heading__line span {
+        font-size: 3rem;
+    }
+
+    .left__container .container__list .container__list--item {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 580px) {
+    .navigation span, 
+    .navigation a,
+    .hero__content .right__container .right__container--text {
+        font-size: 1.5rem;
+    }
+
+    .preloader__overlay--text {
+        line-height: 0.9;
+    }
+
+    .preloader__overlay--text span {
+        font-size: 2.2rem;
+        transform: translateY(105%);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --gutter-width: 2vw;
+    }
+
+    .navigation span, 
+    .navigation a,
+    .hero__content .right__container .right__container--text {
+        font-size: 2.5rem;
+    }
+
+    .navigation__location {
+        display: none;
+    }
+
+    .navigation  .navigation__list {
+        gap: 2rem;
+    }
+
+    .left__container .container__list .container__list--item {
+        font-size: 2.3rem;
+        border-radius: 3rem;
+        padding: 1rem;
+    }
+}
